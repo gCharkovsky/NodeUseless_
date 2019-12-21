@@ -11,15 +11,14 @@ app.get('/note/[0-9]+', (req, res) => {
 });
 
 app.post('/note/', (req, res) => {
-    res.send(JSON.stringify(    ));
+    res.send(JSON.stringify(noteController.add_note(req.data)));
 });
 app.post('/note/[0-9]+', (req, res) => {
-    res.send(JSON.stringify());
-
+    res.send(JSON.stringify(noteController.update_note(req.data)));
 });
 
 app.delete('/note/[0-9]+', (req, res) => {
-    res.send(JSON.stringify());
+    res.send(JSON.stringify(noteController.delete_note(parseInt(req.url.toString().substring(6)))));
 
 });
 
