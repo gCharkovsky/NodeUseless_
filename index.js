@@ -18,7 +18,7 @@ app.post('/note/[0-9]+', (req, res) => {
 });
 
 app.delete('/note/[0-9]+', (req, res) => {
-    res.send(JSON.stringify(noteController.delete_note(parseInt(req.url.toString().substring(6)))));
+    res.send(JSON.stringify(noteController.delete_note(parseInt(req.url.toString().substring(8)))));
 
 });
 
